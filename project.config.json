@@ -1,0 +1,109 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wxeca9a9baaa739aaf",
+	"projectname": "BankOfChina",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 11,
+			"list": [
+				{
+					"id": -1,
+					"name": "自动模拟更新",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自动模拟更新",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自动模拟更新",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自动模拟更新",
+					"pathName": "pages/coupons/coupons",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自动模拟更新",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自动模拟更新",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自动模拟更新",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自定编译更新",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自动编译更新",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自动编译更新",
+					"pathName": "pages/coupons/coupons",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "自动编译更新",
+					"pathName": "pages/coupons/coupons",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编译更新",
+					"pathName": "pages/index/index"
+				}
+			]
+		}
+	}
+}

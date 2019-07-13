@@ -1,0 +1,81 @@
+<!--index.wxml-->
+<view class="credit-content">
+  <view class="tags">
+    <block>
+      <text wx:for="{{info_details.shop_tag}}" wx:key="*this" wx:for-index='index'>{{item}}</text>
+    </block>
+  </view>
+  <swiper class="swiper-box" indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{info_details.shop_pic}}" wx:key="*this" wx:for-index='index'>
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="coup-list">
+    <view class="store-info">
+      <view class="info-left">
+        <text class="h5-title">{{info_details.shop_name}}</text>
+        <text class="h5-text">{{info_details.shop_address}}</text>
+        <text class="h5-text">{{info_details.shop_tel}}</text>
+      </view>
+      <view class="distance">
+        <navigator url="/pages/map/map?lng={{info_details.shop_lng}}&lat={{info_details.shop_lat}}&name={{info_details.shop_name}}" hover-class="navigator-hover" class="credit-card">
+          <image src="/pages/assets/images/icon-distance.png"></image>
+          <text>{{info_details.distance}}</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="info-alert">
+      <text>有质感的家才是好家。金意陶，质感系瓷砖，</text>
+      <text>用质感，造生活，专为质感装修而来。</text>
+    </view>
+    <view class="info-option">
+      <text>品牌优选</text>
+      <text>产品优选</text>
+      <text>服务优选</text>
+      <text>专属特惠</text>
+    </view>
+    <view class="info-tips" wx:if="{{info_details.boc_type == 0}}"></view>
+    <view class="info-tips" wx:if="{{info_details.boc_type == 1}}">
+      <!-- <image src="/pages/assets/images/editer.png"></image>
+      <text>本店可办理爱家卡业务</text> -->
+    </view>
+    <view class="info-tips" wx:if="{{info_details.boc_type == 2}}">
+      <image src="/pages/assets/images/editer.png"></image>
+      <text>本店可办理家装分期</text>
+    </view>
+    <!-- <view class="info-title">活动专享</view>
+    <view class="info-card">
+      <image src="/pages/assets/images/info-card.png"></image>
+    </view>
+    <view class="coupons-list">
+      <text class="h5-title">- 点我领取优惠券 -</text>
+      <view class="coupons">
+        <view class="coup-left">
+          <view class="money">¥<text>300</text></view>
+          <view class="coupons-det">
+            <text class="h5-title">满2999可使用</text>
+            <text class="h5-text">2018.7.1-2018.8.1</text>
+          </view>
+        </view>
+        <view class="coup-right">
+          <view class="to-receive">立即领券</view>
+        </view>
+      </view>
+    </view> -->
+  </view>
+</view>
+<view class="footer">
+  <text class='text-cont'>中国银行&家家户户合作出品</text>
+  <text class='text-cont'>400-4584-5135</text>
+</view>
+<view class="loading {{show==true ? 'shows':''}}" hidden="{{hiddenName}}">
+  <view class="sk-wave">
+    <view class="sk-rect sk-rect-1"></view>
+    <view class="sk-rect sk-rect-2"></view>
+    <view class="sk-rect sk-rect-3"></view>
+    <view class="sk-rect sk-rect-4"></view>
+    <view class="sk-rect sk-rect-5"></view>
+  </view>
+</view>

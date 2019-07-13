@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<swiper class="swiper-box" indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="*this" wx:for-index='index'>
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="credit-content">
+  <view class="cards-list">
+    <view class="cards-title">- 装修全程省钱赚钱  不负美家住更好 -</view>
+    <view class="cards">
+      <navigator url="/pages/aika/aika?title=navigate" hover-class="navigator-hover" class="credit-card">
+        <image src="/pages/assets/images/credit-card.png" class="credit-card"></image>
+      </navigator>
+      <navigator url="/pages/loan/loan?title=navigate" hover-class="navigator-hover">
+        <image src="/pages/assets/images/credit-card-1.png" class="credit-card"></image>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class="footer">
+  <text class='text-cont'>中国银行&家家户户合作出品</text>
+  <text class='text-cont'>400-4584-5135</text>
+</view>

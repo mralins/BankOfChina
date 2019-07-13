@@ -1,0 +1,134 @@
+<view class="credit-content">
+  <view class="aika-img">
+    <image src="/pages/assets/images/aika-card.jpg"></image>
+  </view>
+  <view class="cards-list">
+    <view class="header-list">
+      <view class="list-con">
+        <text class="h-title">一卡双额</text>
+        <text class="span-text">日常消费+装修刷卡</text>
+      </view>
+      <view class="list-con">
+        <text class="h-title">一卡双用</text>
+        <text class="span-text">存款有息+透支取现</text>
+      </view>
+      <view class="list-con">
+        <text class="h-title">刷卡钜惠</text>
+        <text class="span-text">装修全程刷卡享优惠</text>
+      </view>
+    </view>
+    <view class="use-content">
+      <text class="h-title">申领与使用</text>
+      <view class="use-detail">
+        <view class="detail-con">
+          <image class="icons" src="/pages/assets/images/icon-edit.png"></image>
+          <text class="h5-title">申请简</text>
+          <text class="h5-text">无担保无抵押纯信用</text>
+        </view>
+        <view class="detail-con">
+          <image class="icons" src="/pages/assets/images/icon-time.png"></image>
+          <text class="h5-title">审批快</text>
+          <text class="h5-text">拨打400-6584-5135即可申领</text>
+        </view>
+        <view class="detail-con">
+          <image class="icons" src="/pages/assets/images/icon-home.png"></image>
+          <text class="h5-title">使用广</text>
+          <text class="h5-text">装修全程1000+合作商户</text>
+        </view>
+      </view>
+      <text class="h-title">专属特权</text>
+      <view class="privilege">
+        <view class="privi-list">
+          <text class="number">1</text>
+          <view class="lists">
+            <text class="h5-title">申办款额＞6万</text>
+            <text class="h5-text">送惠而浦电烤箱</text>
+          </view>
+        </view>
+        <view class="privi-list">
+          <text class="number">2</text>
+          <view class="lists">
+            <text class="h5-title">首单刷卡＞99元</text>
+            <text class="h5-text">立减50元</text>
+          </view>
+        </view>
+        <view class="privi-list">
+          <text class="number">3</text>
+          <view class="lists">
+            <text class="h5-title">累计刷卡＞1万元</text>
+            <text class="h5-text">额赠20000积分</text>
+          </view>
+        </view>
+        <view class="privi-list">
+          <text class="number">4</text>
+          <view class="lists">
+            <text class="h5-title">装修用卡消费</text>
+            <text class="h5-text">更有时时优惠</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+    <view class="merchants">
+      <text class="h5-title">1000+ 合作商家</text>
+      <view class="choose-option">
+        <view class="choose-title {{selected_addr?'choose-active':''}}" bindtap="selected_addr">
+          <text value="{{city_id}}">{{curr_city}}</text>
+          <icon class="iconfont icon-uparrow"></icon>
+          <icon class="iconfont icon-downarrow"></icon>
+        </view>
+        <view class="choose-title {{selected_merc?'choose-active':''}}" bindtap="selected_merc">
+          <text>{{cate_name}}</text>
+          <icon class="iconfont icon-uparrow"></icon>
+          <icon class="iconfont icon-downarrow"></icon>
+        </view>
+      </view>
+      <view class="choose-content {{selected_addr?'state-active':''}} || {{selected_merc?'state-active':''}}">
+        <view class="choose-list {{selected_addr?'state-active':''}}">
+          <block wx:for="{{bus_city}}" wx:key="" wx:for-item="item" wx:for-index="idx">
+            <text class="{{active == idx?'active':''}}" data-value="{{item.city_id}}" data-text="{{item.city_name}}" data-num="{{idx}}" bindtap="cityTab">{{item.city_name}}</text>
+          </block>
+        </view>
+        <view  class="choose-list {{selected_merc?'state-active':''}}">
+          <text class="{{cate_active == 0?'active':''}}" data-value="0" data-text="品类" data-num="0" bindtap="cateTab">全部</text>
+          <block wx:for="{{category}}" wx:key="" wx:for-item="item" wx:for-index="idx">
+            <text class="{{cate_active == idx+1?'active':''}}" data-value="{{item.cate_id}}" data-text="{{item.cate_name}}" data-num="{{idx+1}}" bindtap="cateTab">{{item.cate_name}}</text>
+          </block>
+        </view>
+      </view>
+      <view class="mer-list">
+        <block wx:for="{{moment}}" wx:key="" wx:for-item="item" wx:for-index="idx">
+          <view class="list-conts">
+            <navigator url="/pages/coupons/coupons?sid={{item.shop_id}}" hover-class="navigator-hover" class="credit-card">
+              <view class="mer-header">
+                <image src="{{item.shop_head_pic}}"></image>
+              </view>
+              <view class="per-info">
+                <text class="per-title">{{item.shop_name}}</text>
+                <text class="per-text">{{item.shop_address}}</text>
+              </view>
+              <view class="distance">
+                <image src="/pages/assets/images/icon-distance.png"></image>
+                <text>{{item.distance}}</text>
+              </view>
+            </navigator>
+          </view>
+        </block>
+      </view>
+    </view>
+    <text class='none-content'>{{more_tips}}</text>
+</view>
+<view class="footer">
+  <text class='text-cont'>中国银行&家家户户合作出品</text>
+  <text class='text-cont'>400-4584-5135</text>
+</view>
+
+<view class="loading {{show==true ? 'shows':''}}" hidden="{{hiddenName}}">
+  <view class="sk-wave">
+    <view class="sk-rect sk-rect-1"></view>
+    <view class="sk-rect sk-rect-2"></view>
+    <view class="sk-rect sk-rect-3"></view>
+    <view class="sk-rect sk-rect-4"></view>
+    <view class="sk-rect sk-rect-5"></view>
+  </view>
+</view>

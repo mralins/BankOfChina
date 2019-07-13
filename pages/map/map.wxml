@@ -1,0 +1,3 @@
+<view class="tui-map">
+  <map id="map" longitude="{{currentLo}}" latitude="{{currentLa}}" scale="{{scale}}" markers="{{markers}}" polyline="{{polyline}}"  include-points="{{includePoints}}" show-location style="width: 100%; height: 100%;"></map>
+</view>

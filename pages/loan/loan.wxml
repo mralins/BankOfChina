@@ -1,0 +1,102 @@
+<view class="credit-content">
+  <view class="aika-img">
+    <image src="/pages/assets/images/credit-shuff.jpg"></image>
+  </view>
+    <view class="cards-list">
+    <view class="header-list">
+      <view class="list-con">
+        <text class="h-title">最高30万</text>
+        <text class="span-text">需要多少贷多少</text>
+      </view>
+      <view class="list-con">
+        <text class="h-title">最长60期</text>
+        <text class="span-text">还可以提前还</text>
+      </view>
+      <view class="list-con">
+        <text class="h-title">费率0.333%</text>
+        <text class="span-text">无利率浮动</text>
+      </view>
+    </view>
+    <view class="use-content">
+      <text class="h-title">申领与使用</text>
+      <view class="use-detail">
+        <view class="detail-con">
+          <image class="icons" src="/pages/assets/images/icon-edit.png"></image>
+          <text class="h5-title">现场申请使用</text>
+          <text class="h5-text">以下商户现场申请</text>
+        </view>
+        <view class="detail-con">
+          <image class="icons" src="/pages/assets/images/icon-message.png"></image>
+          <text class="h5-title">7分钟完成授信</text>
+          <text class="h5-text">在线视频授信</text>
+        </view>
+        <view class="detail-con">
+          <image class="icons" src="/pages/assets/images/icon-people.png"></image>
+          <text class="h5-title">1小时办理</text>
+          <text class="h5-text">银行人员上门办理</text>
+        </view>
+      </view>
+    </view>
+  </view>
+      <view class="merchants">
+      <text class="h5-title">申请家装分期合作商家</text>
+      <view class="choose-option">
+        <view class="choose-title {{selected_addr?'choose-active':''}}" bindtap="selected_addr">
+          <text value="{{city_id}}">{{curr_city}}</text>
+          <icon class="iconfont icon-uparrow"></icon>
+          <icon class="iconfont icon-downarrow"></icon>
+        </view>
+        <view class="choose-title {{selected_merc?'choose-active':''}}" bindtap="selected_merc">
+          <text>{{cate_name}}</text>
+          <icon class="iconfont icon-uparrow"></icon>
+          <icon class="iconfont icon-downarrow"></icon>
+        </view>
+      </view>
+      <view class="choose-content {{selected_addr?'state-active':''}} || {{selected_merc?'state-active':''}}">
+        <view class="choose-list {{selected_addr?'state-active':''}}">
+          <block wx:for="{{bus_city}}" wx:key="" wx:for-item="item" wx:for-index="idx">
+            <text class="{{active == idx?'active':''}}" data-value="{{item.city_id}}" data-text="{{item.city_name}}" data-num="{{idx}}" bindtap="cityTab">{{item.city_name}}</text>
+          </block>
+        </view>
+        <view  class="choose-list {{selected_merc?'state-active':''}}">
+          <text class="{{cate_active == 0?'active':''}}" data-value="0" data-text="品类" data-num="0" bindtap="cateTab">全部</text>
+          <block wx:for="{{category}}" wx:key="" wx:for-item="item" wx:for-index="idx">
+            <text class="{{cate_active == idx+1?'active':''}}" data-value="{{item.cate_id}}" data-text="{{item.cate_name}}" data-num="{{idx+1}}" bindtap="cateTab">{{item.cate_name}}</text>
+          </block>
+        </view>
+      </view>
+      <view class="mer-list">
+        <block wx:for="{{moment}}" wx:key="" wx:for-item="item" wx:for-index="idx">
+          <view class="list-conts">
+            <navigator url="/pages/coupons/coupons?sid={{item.shop_id}}" hover-class="navigator-hover" class="credit-card">
+              <view class="mer-header">
+                <image src="{{item.shop_head_pic}}"></image>
+              </view>
+              <view class="per-info">
+                <text class="per-title">{{item.shop_name}}</text>
+                <text class="per-text">{{item.shop_address}}</text>
+              </view>
+              <view class="distance">
+                <image src="/pages/assets/images/icon-distance.png"></image>
+                <text>{{item.distance}}</text>
+              </view>
+            </navigator>
+          </view>
+        </block>
+      </view>
+    </view>
+    <text class='none-content'>{{more_tips}}</text>
+</view>
+<view class="footer">
+  <text class='text-cont'>中国银行&家家户户合作出品</text>
+  <text class='text-cont'>400-4584-5135</text>
+</view>
+<view class="loading {{show==true ? 'shows':''}}" hidden="{{hiddenName}}">
+  <view class="sk-wave">
+    <view class="sk-rect sk-rect-1"></view>
+    <view class="sk-rect sk-rect-2"></view>
+    <view class="sk-rect sk-rect-3"></view>
+    <view class="sk-rect sk-rect-4"></view>
+    <view class="sk-rect sk-rect-5"></view>
+  </view>
+</view>

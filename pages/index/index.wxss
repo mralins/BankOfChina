@@ -1,0 +1,28 @@
+/**index.wxss**/
+.cards-title{
+  font-size: 22rpx;
+  color: #888888;
+  padding: 30rpx 0;
+  text-align: center;
+}
+.cards{
+  width: 100%;
+  overflow: hidden;
+}
+.cards .credit-card{
+  margin-bottom: 30rpx;
+}
+.cards navigator{
+  display: inline-block;
+  width: 100%;
+  height: 590rpx;
+  overflow: hidden;
+  border-radius: 20rpx;
+  -webkit-border-radius: 20rpx;
+  -moz-border-radius: 20rpx;
+  overflow: hidden;
+}
+.cards image{
+  width: 100%;
+  height: 590rpx
+}

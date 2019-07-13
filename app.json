@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/aika/aika",
+    "pages/loan/loan",
+    "pages/coupons/coupons",
+    "pages/map/map",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "中国银行",
+    "navigationBarTextStyle":"black"
+  }
+}
